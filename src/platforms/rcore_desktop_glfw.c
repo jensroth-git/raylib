@@ -1390,6 +1390,9 @@ int InitPlatform(void)
     // Window flags requested before initialization to be applied after initialization
     unsigned int requestedWindowFlags = CORE.Window.flags;
 
+    //hack for Lyraa
+	glfwWindowHint(GLFW_TOOL_WINDOW, GLFW_TRUE);
+
     // Check window creation flags
     if ((CORE.Window.flags & FLAG_FULLSCREEN_MODE) > 0) CORE.Window.fullscreen = true;
 

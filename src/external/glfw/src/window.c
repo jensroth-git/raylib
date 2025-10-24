@@ -230,6 +230,7 @@ GLFWAPI GLFWwindow* glfwCreateWindow(int width, int height,
     window->decorated        = wndconfig.decorated;
     window->autoIconify      = wndconfig.autoIconify;
     window->floating         = wndconfig.floating;
+	window->toolWindow       = wndconfig.toolWindow;
     window->focusOnShow      = wndconfig.focusOnShow;
     window->mousePassthrough = wndconfig.mousePassthrough;
     window->cursorMode       = GLFW_CURSOR_NORMAL;
@@ -270,6 +271,7 @@ void glfwDefaultWindowHints(void)
     _glfw.hints.window.visible      = GLFW_TRUE;
     _glfw.hints.window.decorated    = GLFW_TRUE;
     _glfw.hints.window.focused      = GLFW_TRUE;
+	_glfw.hints.window.toolWindow   = GLFW_FALSE;
     _glfw.hints.window.autoIconify  = GLFW_TRUE;
     _glfw.hints.window.centerCursor = GLFW_TRUE;
     _glfw.hints.window.focusOnShow  = GLFW_TRUE;
@@ -361,6 +363,9 @@ GLFWAPI void glfwWindowHint(int hint, int value)
         case GLFW_FLOATING:
             _glfw.hints.window.floating = value ? GLFW_TRUE : GLFW_FALSE;
             return;
+		case GLFW_TOOL_WINDOW:
+            _glfw.hints.window.toolWindow = value ? GLFW_TRUE : GLFW_FALSE;
+			return;
         case GLFW_MAXIMIZED:
             _glfw.hints.window.maximized = value ? GLFW_TRUE : GLFW_FALSE;
             return;
@@ -893,6 +898,8 @@ GLFWAPI int glfwGetWindowAttrib(GLFWwindow* handle, int attrib)
             return window->decorated;
         case GLFW_FLOATING:
             return window->floating;
+        case GLFW_TOOL_WINDOW:
+		    return window->toolWindow;
         case GLFW_AUTO_ICONIFY:
             return window->autoIconify;
         case GLFW_DOUBLEBUFFER:

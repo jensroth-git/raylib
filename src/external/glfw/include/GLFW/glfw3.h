@@ -921,14 +921,16 @@ extern "C" {
  *  [window attribute](@ref GLFW_FOCUS_ON_SHOW_attrib).
  */
 #define GLFW_FOCUS_ON_SHOW          0x0002000C
-
+/* 
+ *
+ */
+#define GLFW_TOOL_WINDOW            0x00026002
 /*! @brief Mouse input transparency window hint and attribute
  *
  *  Mouse input transparency [window hint](@ref GLFW_MOUSE_PASSTHROUGH_hint) or
  *  [window attribute](@ref GLFW_MOUSE_PASSTHROUGH_attrib).
  */
 #define GLFW_MOUSE_PASSTHROUGH      0x0002000D
-
 /*! @brief Initial position x-coordinate window hint.
  *
  *  Initial position x-coordinate [window hint](@ref GLFW_POSITION_X).

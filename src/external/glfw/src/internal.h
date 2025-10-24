@@ -398,6 +398,7 @@ struct _GLFWwndconfig
     GLFWbool      visible;
     GLFWbool      decorated;
     GLFWbool      focused;
+    GLFWbool      toolWindow;
     GLFWbool      autoIconify;
     GLFWbool      floating;
     GLFWbool      maximized;
@@ -527,6 +528,7 @@ struct _GLFWwindow
     GLFWbool            decorated;
     GLFWbool            autoIconify;
     GLFWbool            floating;
+    GLFWbool            toolWindow;
     GLFWbool            focusOnShow;
     GLFWbool            mousePassthrough;
     GLFWbool            shouldClose;

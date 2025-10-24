@@ -122,3 +122,6 @@ tools/rexm/rexm
 # CI
 emsdk-cache/
 raylib.com/
+
+#build files
+out/*
